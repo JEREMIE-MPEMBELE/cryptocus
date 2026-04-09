@@ -43,10 +43,10 @@
       flex-wrap: wrap;
     }
     .photo {
-      width: 110px;
-      height: 110px;
-      min-width: 110px;
-      min-height: 110px;
+      width: 130px;
+      height: 130px;
+      min-width: 130px;
+      min-height: 130px;
       background: linear-gradient(135deg, #10b981, #059669);
       border-radius: 50%;
       display: flex;
@@ -66,6 +66,8 @@
     label { font-weight: 600; font-size: 0.7rem; text-transform: uppercase; color: #9ca3af; display: block; margin-top: 0.8rem; }
     input, select, textarea { width: 100%; padding: 0.7rem; margin-top: 0.3rem; border-radius: 0.8rem; border: 1.5px solid #1e2a3a; background: #0f1420; color: #e5e7eb; font-family: 'Fira Code', monospace; font-size: 0.85rem; }
     input:focus, select:focus, textarea:focus { outline: none; border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.2); }
+    input[type=number] { -moz-appearance: textfield; }
+    input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { opacity: 0.5; }
     .key-group { display: flex; gap: 0.8rem; flex-wrap: wrap; }
     .key-group input { flex: 1; }
     
@@ -104,10 +106,13 @@
     .skills-col { background: #0f1420; border-radius: 1rem; padding: 1rem; border: 1px solid #1e2a3a; }
     .skills-col h3 { color: #10b981; font-size: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #1e2a3a; padding-bottom: 0.5rem; }
     
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
     .project-card { background: #0f1420; border-radius: 1rem; padding: 0.8rem; border: 1px solid #1e2a3a; }
     .project-card h3 { color: #10b981; font-size: 0.9rem; margin-bottom: 0.3rem; }
-    .project-card p { font-size: 0.7rem; color: #9ca3af; }
+    .project-card p { font-size: 0.7rem; color: #9ca3af; margin-bottom: 0.5rem; }
+    .project-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .project-link { font-size: 0.65rem; color: #10b981; text-decoration: none; border: 1px solid #10b981; padding: 0.2rem 0.5rem; border-radius: 1rem; transition: 0.2s; }
+    .project-link:hover { background: #10b981; color: #0b0f19; }
     
     footer { text-align: center; padding: 1.5rem; color: #6b7280; border-top: 1px solid #1e2a3a; margin-top: 1.5rem; font-size: 0.7rem; }
     .contact-links a { color: #10b981; text-decoration: none; font-size: 0.8rem; }
@@ -117,7 +122,7 @@
       .navbar { flex-direction: column; text-align: center; }
       .nav-links { justify-content: center; gap: 1rem; }
       .profile { flex-direction: column; text-align: center; }
-      .photo { width: 90px; height: 90px; min-width: 90px; min-height: 90px; }
+      .photo { width: 100px; height: 100px; min-width: 100px; min-height: 100px; }
       .container { padding: 1rem; }
       .button-group button { min-width: auto; padding: 0.5rem 0.8rem; font-size: 0.75rem; }
       .skills-grid { grid-template-columns: 1fr; }
@@ -185,11 +190,31 @@
   <div class="section" id="projets">
     <h2 class="section-title">🚀 Projets</h2>
     <div class="grid-2">
-      <div class="project-card"><h3>📞 Serveur VoIP Asterisk</h3><p>Déploiement IP-PBX, SIP, dialplan, softphones</p></div>
-      <div class="project-card"><h3>📱 Application Mobile Artisans</h3><p>Java, SQLite, Room, gestion hors-ligne</p></div>
-      <div class="project-card"><h3>📊 Pipeline ventes & Cube SSAS</h3><p>ETL (SSIS), MDX, modélisation en étoile</p></div>
-      <div class="project-card"><h3>💰 Gestion compte bancaire</h3><p>Node.js, Express, HTML/CSS/JS</p></div>
-      <div class="project-card"><h3>🔐 CRYPTOCUS</h3><p>Playfair, César, Autokey, Vigenère, Affine</p></div>
+      <div class="project-card">
+        <h3>📞 Serveur VoIP Asterisk</h3>
+        <p>Déploiement IP-PBX, SIP, dialplan, softphones</p>
+        <div class="project-links"><a class="project-link" href="https://www.linkedin.com/posts/j%C3%A9r%C3%A9mie-mpembele-8670a538b_voip-asterisk-telecommunications-ugcPost-7442347503611535361-GaN7" target="_blank">Voir le post</a></div>
+      </div>
+      <div class="project-card">
+        <h3>📱 Application Mobile Artisans</h3>
+        <p>Java, SQLite, Room, gestion hors-ligne</p>
+        <div class="project-links"><a class="project-link" href="https://www.linkedin.com/posts/j%C3%A9r%C3%A9mie-mpembele-8670a538b_androiddev-mobiledevelopment-sqlite-ugcPost-7442692723062755328-J30V" target="_blank">Voir le post</a></div>
+      </div>
+      <div class="project-card">
+        <h3>📊 Pipeline ventes & Cube SSAS</h3>
+        <p>ETL (SSIS), MDX, modélisation en étoile</p>
+        <div class="project-links"><a class="project-link" href="https://www.linkedin.com/posts/j%C3%A9r%C3%A9mie-mpembele-8670a538b_dataengineering-businessintelligence-sqlserver-ugcPost-7442707616004317184-zAko" target="_blank">Voir le post</a></div>
+      </div>
+      <div class="project-card">
+        <h3>💰 Gestion compte bancaire</h3>
+        <p>Node.js, Express, HTML/CSS/JS</p>
+        <div class="project-links"><a class="project-link" href="https://github.com/JEREMIE-MPEMBELE/gestionBancaire" target="_blank">GitHub</a></div>
+      </div>
+      <div class="project-card">
+        <h3>🔐 CRYPTOCUS</h3>
+        <p>Playfair, César, Autokey, Vigenère, Affine</p>
+        <div class="project-links"><a class="project-link" href="https://github.com/JEREMIE-MPEMBELE/cryptocus" target="_blank">GitHub</a></div>
+      </div>
     </div>
   </div>
 
@@ -389,7 +414,8 @@
   function vigenereCipher(text, key, encrypt) {
     let txt = cleanLettersStandard(text);
     let k = cleanLettersStandard(key);
-    if(k.length===0) return txt;
+    if(k.length === 0) return txt;
+    if(k.length > txt.length) return "Erreur: clé plus longue que le message";
     let res=[];
     for(let i=0;i<txt.length;i++) {
       let p = charToNum(txt[i]);
@@ -417,19 +443,25 @@
   }
 
   function updateKeyUI() {
-    if(algoSelect.value === 'affine') {
-      keyContainer.innerHTML = `<div class="key-group"><input type="text" id="k1Input" placeholder="k1 (5)"><input type="text" id="k2Input" placeholder="k2 (8)"></div>`;
+    const algo = algoSelect.value;
+    if(algo === 'affine') {
+      keyContainer.innerHTML = `<div class="key-group"><input type="number" id="k1Input" placeholder="k1 (5)" min="0" max="25" step="1" value="5"><input type="number" id="k2Input" placeholder="k2 (8)" min="0" max="25" step="1" value="8"></div>`;
+    } else if(algo === 'cesar') {
+      keyContainer.innerHTML = `<input type="number" id="keyInput" placeholder="Décalage (ex: 3)" min="0" max="25" step="1" value="3">`;
+    } else if(algo === 'autokey') {
+      keyContainer.innerHTML = `<input type="number" id="keyInput" placeholder="Clé initiale (0-25)" min="0" max="25" step="1" value="12">`;
     } else {
-      keyContainer.innerHTML = `<input type="text" id="keyInput" placeholder="Clé">`;
+      keyContainer.innerHTML = `<input type="text" id="keyInput" placeholder="Clé (ex: MODE / LEMON)">`;
     }
   }
   algoSelect.addEventListener('change', updateKeyUI);
   updateKeyUI();
 
   function getKeyValues() {
-    if(algoSelect.value === 'affine') {
-      let k1 = parseInt(document.getElementById('k1Input')?.value);
-      let k2 = parseInt(document.getElementById('k2Input')?.value);
+    const algo = algoSelect.value;
+    if(algo === 'affine') {
+      let k1 = parseInt(document.getElementById('k1Input')?.value) || 0;
+      let k2 = parseInt(document.getElementById('k2Input')?.value) || 0;
       return { k1, k2 };
     } else {
       let val = document.getElementById('keyInput')?.value || '';
@@ -438,7 +470,9 @@
   }
 
   function validate() {
-    let algo = algoSelect.value;
+    const algo = algoSelect.value;
+    const msg = document.getElementById('messageInput').value;
+    
     if(algo === 'playfair') {
       let { val } = getKeyValues();
       if(!val.trim()) return "Clé Playfair vide";
@@ -447,26 +481,31 @@
     }
     if(algo === 'cesar') {
       let { val } = getKeyValues();
-      if(!/^-?\d+$/.test(val)) return "Clé César : nombre entier (ex: 3)";
+      let n = parseInt(val);
+      if(isNaN(n)) return "Clé César : nombre entier requis";
+      if(n < 0 || n > 25) return "Clé César : entre 0 et 25";
       return null;
     }
     if(algo === 'autokey') {
       let { val } = getKeyValues();
-      if(!/^\d+$/.test(val)) return "Clé Autokey : nombre entier";
       let n = parseInt(val);
-      if(n<0 || n>25) return "Clé Autokey : entre 0 et 25";
+      if(isNaN(n)) return "Clé Autokey : nombre entier requis";
+      if(n < 0 || n > 25) return "Clé Autokey : entre 0 et 25";
       return null;
     }
     if(algo === 'vigenere') {
       let { val } = getKeyValues();
       if(!val.trim()) return "Clé Vigenère vide";
       if(!/^[A-Za-z]+$/.test(val)) return "Clé Vigenère : lettres uniquement";
+      let txt = cleanLettersStandard(msg);
+      let k = cleanLettersStandard(val);
+      if(k.length > txt.length) return "Clé Vigenère plus longue que le message (après nettoyage)";
       return null;
     }
     if(algo === 'affine') {
       let { k1, k2 } = getKeyValues();
       if(isNaN(k1) || isNaN(k2)) return "k1 et k2 nombres";
-      if(k1<0 || k1>25 || k2<0 || k2>25) return "k1,k2 entre 0 et 25";
+      if(k1 < 0 || k1 > 25 || k2 < 0 || k2 > 25) return "k1,k2 entre 0 et 25";
       function gcd(a,b) { return b===0 ? a : gcd(b, a%b); }
       if(gcd(k1,26) !== 1) return `k1=${k1} non inversible (pgcd≠1)`;
       return null;
@@ -494,6 +533,7 @@
       } else if(algo === 'vigenere') {
         let { val } = getKeyValues();
         result = vigenereCipher(msg, val, encryptMode);
+        if(result.includes("Erreur")) return showError(result);
       } else if(algo === 'affine') {
         let { k1, k2 } = getKeyValues();
         result = affineCipher(msg, k1, k2, encryptMode);
@@ -501,14 +541,18 @@
       }
       const label = encryptMode ? "Chiffré" : "Déchiffré";
       showSuccess(`<strong>${label} :</strong><br> ${result}`, result);
-    } catch(e) { showError("Erreur technique"); }
+    } catch(e) { showError("Erreur technique: " + e.message); }
   }
 
   function clearAll() {
     document.getElementById('messageInput').value = '';
     if(algoSelect.value === 'affine') {
-      if(document.getElementById('k1Input')) document.getElementById('k1Input').value = '';
-      if(document.getElementById('k2Input')) document.getElementById('k2Input').value = '';
+      if(document.getElementById('k1Input')) document.getElementById('k1Input').value = '5';
+      if(document.getElementById('k2Input')) document.getElementById('k2Input').value = '8';
+    } else if(algoSelect.value === 'cesar') {
+      if(document.getElementById('keyInput')) document.getElementById('keyInput').value = '3';
+    } else if(algoSelect.value === 'autokey') {
+      if(document.getElementById('keyInput')) document.getElementById('keyInput').value = '12';
     } else {
       if(document.getElementById('keyInput')) document.getElementById('keyInput').value = '';
     }
