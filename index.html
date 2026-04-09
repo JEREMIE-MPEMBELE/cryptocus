@@ -34,19 +34,19 @@
       background: rgba(17, 24, 39, 0.6);
       backdrop-filter: blur(10px);
       border-radius: 1.5rem;
-      padding: 1.2rem 1.5rem;
+      padding: 1.5rem 2rem;
       margin-bottom: 1.8rem;
       border: 1px solid #1e2a3a;
       display: flex;
       align-items: center;
-      gap: 1.2rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
     .photo {
-      width: 70px;
-      height: 70px;
-      min-width: 70px;
-      min-height: 70px;
+      width: 110px;
+      height: 110px;
+      min-width: 110px;
+      min-height: 110px;
       background: linear-gradient(135deg, #10b981, #059669);
       border-radius: 50%;
       display: flex;
@@ -56,8 +56,8 @@
       box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
     }
     .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .info h1 { font-size: 1.3rem; background: linear-gradient(120deg, #10b981, #34d399); background-clip: text; -webkit-background-clip: text; color: transparent; }
-    .info p { font-size: 0.8rem; color: #9ca3af; }
+    .info h1 { font-size: 1.5rem; background: linear-gradient(120deg, #10b981, #34d399); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    .info p { font-size: 0.9rem; color: #9ca3af; }
     
     .section { margin-bottom: 2rem; }
     .section-title { font-size: 1.3rem; border-left: 4px solid #10b981; padding-left: 0.8rem; margin-bottom: 1rem; }
@@ -95,10 +95,14 @@
     .copy-btn:hover { background: #10b981; color: white; }
     .error-area { color: #fca5a5; background: rgba(220,38,38,0.1); border-color: #ef4444; }
     
-    .skill-item { margin-bottom: 1rem; }
+    .skill-item { margin-bottom: 0.8rem; }
     .skill-name { display: flex; justify-content: space-between; margin-bottom: 0.2rem; font-size: 0.75rem; }
     .progress-bar { background: #1e2a3a; border-radius: 1rem; height: 6px; overflow: hidden; }
     .progress-fill { background: linear-gradient(90deg, #10b981, #34d399); height: 100%; border-radius: 1rem; width: 0%; }
+    
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .skills-col { background: #0f1420; border-radius: 1rem; padding: 1rem; border: 1px solid #1e2a3a; }
+    .skills-col h3 { color: #10b981; font-size: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #1e2a3a; padding-bottom: 0.5rem; }
     
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
     .project-card { background: #0f1420; border-radius: 1rem; padding: 0.8rem; border: 1px solid #1e2a3a; }
@@ -106,7 +110,6 @@
     .project-card p { font-size: 0.7rem; color: #9ca3af; }
     
     footer { text-align: center; padding: 1.5rem; color: #6b7280; border-top: 1px solid #1e2a3a; margin-top: 1.5rem; font-size: 0.7rem; }
-    .note { font-size: 0.65rem; color: #6b7280; margin-top: 0.5rem; text-align: center; }
     .contact-links a { color: #10b981; text-decoration: none; font-size: 0.8rem; }
     .contact-links a:hover { text-decoration: underline; }
     
@@ -114,9 +117,10 @@
       .navbar { flex-direction: column; text-align: center; }
       .nav-links { justify-content: center; gap: 1rem; }
       .profile { flex-direction: column; text-align: center; }
-      .photo { width: 80px; height: 80px; min-width: 80px; min-height: 80px; }
+      .photo { width: 90px; height: 90px; min-width: 90px; min-height: 90px; }
       .container { padding: 1rem; }
       .button-group button { min-width: auto; padding: 0.5rem 0.8rem; font-size: 0.75rem; }
+      .skills-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .grid-2 { grid-template-columns: 1fr; }
@@ -143,7 +147,7 @@
     <div class="photo"><img src="./images/IMG-20250422-WA0073.jpg" alt="Photo"></div>
     <div class="info">
       <h1>MPEMBELE DIASONAMA JEREMIE</h1>
-      <p>L3 Informatique · Cryptographie · Algorithmique</p>
+      <p>L3 Mathématiques, Statistiques et Informatique · Passionné de cryptographie, algorithmique et cybersécurité</p>
     </div>
   </div>
 
@@ -151,7 +155,7 @@
     <h2 class="section-title">🔒 Chiffrement / Déchiffrement</h2>
     <div class="crypto-card">
       <label>Message</label>
-      <textarea id="messageInput" rows="3" placeholder="Entrez votre message..."></textarea>
+      <textarea id="messageInput" rows="3" placeholder="HELLO WORLD"></textarea>
 
       <label>Algorithme</label>
       <select id="algoSelect">
@@ -175,43 +179,59 @@
         <span class="result-text" id="resultText">⚡ Résultat</span>
         <button class="copy-btn" id="copyBtn">Copier</button>
       </div>
-      <div class="note">ℹ️ Playfair : I=J. Les X sont supprimés au déchiffrement.</div>
     </div>
   </div>
 
   <div class="section" id="projets">
     <h2 class="section-title">🚀 Projets</h2>
     <div class="grid-2">
-      <div class="project-card"><h3>📊 Data Warehouse & BI</h3><p>SSIS, SSAS, MDX, SQL Server</p></div>
-      <div class="project-card"><h3>📱 Android Natif</h3><p>Java, SQLite, Room</p></div>
-      <div class="project-card"><h3>📞 VoIP Asterisk</h3><p>SIP, dialplan, Linux</p></div>
-      <div class="project-card"><h3>💰 Node.js Bancaire</h3><p>Express, JS</p></div>
-      <div class="project-card"><h3>🤖 Machine Learning</h3><p>Python, scikit-learn</p></div>
+      <div class="project-card"><h3>📞 Serveur VoIP Asterisk</h3><p>Déploiement IP-PBX, SIP, dialplan, softphones</p></div>
+      <div class="project-card"><h3>📱 Application Mobile Artisans</h3><p>Java, SQLite, Room, gestion hors-ligne</p></div>
+      <div class="project-card"><h3>📊 Pipeline ventes & Cube SSAS</h3><p>ETL (SSIS), MDX, modélisation en étoile</p></div>
+      <div class="project-card"><h3>💰 Gestion compte bancaire</h3><p>Node.js, Express, HTML/CSS/JS</p></div>
       <div class="project-card"><h3>🔐 CRYPTOCUS</h3><p>Playfair, César, Autokey, Vigenère, Affine</p></div>
     </div>
   </div>
 
   <div class="section" id="competences">
     <h2 class="section-title">⚙️ Compétences</h2>
-    <div class="crypto-card">
-      <div class="skill-item"><div class="skill-name"><span>C</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>Java</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>JavaScript</span><span>80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>Node.js/Express</span><span>80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>Python</span><span>75%</span></div><div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>SQL Server/SSIS/SSAS</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>MySQL/Oracle</span><span>80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>Android</span><span>70%</span></div><div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>Linux</span><span>75%</span></div><div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>VoIP/Asterisk</span><span>65%</span></div><div class="progress-bar"><div class="progress-fill" style="width:65%"></div></div></div>
-      <div class="skill-item"><div class="skill-name"><span>Algorithmique</span><span>90%</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></div>
+    <div class="skills-grid">
+      <div class="skills-col">
+        <h3>💻 Techniques</h3>
+        <div class="skill-item"><div class="skill-name"><span>C</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Java / Swing</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>HTML / CSS / JS</span><span>80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Node.js / Express</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Bash / Scripting</span><span>60%</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Python / Tkinter</span><span>80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Python / NumPy / Pandas</span><span>65%</span></div><div class="progress-bar"><div class="progress-fill" style="width:65%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>MySQL</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Oracle</span><span>75%</span></div><div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>SQL Server / SSIS / SSAS</span><span>80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Linux Essentials</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Modélisation / Merise</span><span>90%</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Modélisation / UML</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Réseaux (théories)</span><span>65%</span></div><div class="progress-bar"><div class="progress-fill" style="width:65%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Algorithmique</span><span>95%</span></div><div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Data Science</span><span>50%</span></div><div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div></div>
+      </div>
+      <div class="skills-col">
+        <h3>🤝 Sociales</h3>
+        <div class="skill-item"><div class="skill-name"><span>Résolution de problèmes</span><span>90%</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Empathie</span><span>70%</span></div><div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Adaptabilité</span><span>90%</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Gestion du stress</span><span>95%</span></div><div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Esprit critique</span><span>90%</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Travail en équipe</span><span>80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Communication</span><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+      </div>
     </div>
   </div>
 
   <div class="section" id="contact">
     <h2 class="section-title">📬 Contact</h2>
     <div class="crypto-card contact-links">
-      <p>📧 mpembelejeremie@gmail.com / philosphejeremie@gmail.com</p>
+      <p>📧 <a href="mailto:mpembelejeremie@gmail.com">mpembelejeremie@gmail.com</a> / <a href="mailto:philosphejeremie@gmail.com">philosphejeremie@gmail.com</a></p>
       <p>🔗 <a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9mie-mpembele-8670a538b" target="_blank">LinkedIn</a></p>
       <p>🐙 <a href="https://github.com/JEREMIE-MPEMBELE" target="_blank">GitHub</a></p>
     </div>
@@ -220,12 +240,22 @@
 </div>
 
 <script>
+  function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
   function mod(n, m) { return ((n % m) + m) % m; }
   function charToNum(c) { return c.charCodeAt(0) - 65; }
   function numToChar(n) { return String.fromCharCode(mod(n,26) + 65); }
   
-  function cleanLettersPlayfair(txt) { return txt.toUpperCase().replace(/[^A-Z]/g, '').replace(/J/g, 'I'); }
-  function cleanLettersStandard(txt) { return txt.toUpperCase().replace(/[^A-Z]/g, ''); }
+  function cleanLettersPlayfair(txt) { 
+    let cleaned = removeAccents(txt.toUpperCase());
+    return cleaned.replace(/[^A-Z]/g, '').replace(/J/g, 'I');
+  }
+  function cleanLettersStandard(txt) { 
+    let cleaned = removeAccents(txt.toUpperCase());
+    return cleaned.replace(/[^A-Z]/g, '');
+  }
   
   let lastRawResult = "";
 
@@ -498,7 +528,6 @@
   document.getElementById('decryptBtn').addEventListener('click', () => process(false));
   document.getElementById('clearBtn').addEventListener('click', clearAll);
   document.getElementById('copyBtn').addEventListener('click', copyResult);
-  document.getElementById('messageInput').value = "HELLO WORLD";
 </script>
 </body>
 </html>
